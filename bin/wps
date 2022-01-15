@@ -7,7 +7,7 @@ gBinPath=$(dirname "$0")
 if [ -d "${gBinPath}/office6" ]; then
         gInstallPath=${gBinPath}
 else
-        gInstallPath="${HOME}"/lib
+        gInstallPath="${HOME}"/.local/lib
 fi
 gApp=wps
 gDaemon=0
