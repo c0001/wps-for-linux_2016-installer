@@ -13,7 +13,7 @@ this_src_dir="$( cd -P "$( dirname "$this_src" )" >/dev/null && pwd )"
 
 type=$1
 
-topdir="${HOME}"/.local/
+topdir="${HOME}"/.local
 
 install -d "$topdir"/lib
 install -d "$topdir"/bin
