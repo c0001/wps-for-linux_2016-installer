@@ -27,6 +27,21 @@ then
     cp -rv "${this_src_dir}"/bin "$topdir"/
     cp -rv "${this_src_dir}"/share "$topdir"/
 
+    # patch desktop icon
+    cd "${HOME}/.local/share/applications/"
+    if [[ -f wps-office-wps.desktop ]]
+    then
+        sed -i "s|Icon=wps-office-wpsmain|Icon=${HOME}/.local/share/icons/hicolor/256x256/apps/wps-office-wpsmain.png|g" ./wps-office-wps.desktop
+    fi
+    if [[ -f wps-office-wpp.desktop ]]
+    then
+        sed -i "s|Icon=wps-office-wppmain|Icon=${HOME}/.local/share/icons/hicolor/256x256/apps/wps-office-wppmain.png|g" ./wps-office-wpp.desktop
+    fi
+    if [[ -f wps-office-et.desktop ]]
+    then
+        sed -i "s|Icon=wps-office-etmain|Icon=${HOME}/.local/share/icons/hicolor/256x256/apps/wps-office-etmain.png|g" ./wps-office-et.desktop
+    fi
+
 elif [[ $1 == 'uninstall' ]]
 then
     while IFS= read f
