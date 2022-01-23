@@ -23,9 +23,23 @@ install -d "$topdir"/share
 set -e
 if [[ $1 == 'install' ]]
 then
-    cp -rv "${this_src_dir}"/lib "$topdir"/
-    cp -rv "${this_src_dir}"/bin "$topdir"/
-    cp -rv "${this_src_dir}"/share "$topdir"/
+
+    while IFS= read file
+    do
+        if [[ -f "${this_src_dir}"/"$file" ]]
+        then
+            cp -iv "${this_src_dir}"/"$file" "${topdir}"/"$file"
+        fi
+    done < "${this_src_dir}"/file.txt
+
+    while IFS= read link
+    do
+        if [[ -f "${this_src_dir}"/"$link" ]]
+        then
+            cp -iv "${this_src_dir}"/"$link" "${topdir}"/"$link"
+        fi
+    done < "${this_src_dir}"/link.txt
+
 
     # patch desktop icon
     cd "${HOME}/.local/share/applications/"
