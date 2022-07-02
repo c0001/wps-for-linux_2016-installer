@@ -1,0 +1,22 @@
+#+title: WPS office for linux 2016 local intaller
+#+author: Entropy (bmsac0001@gmail.ocm)
+
+This repo maintained the obsolete [[https://www.wps.com/office/linux/][wps-for-linux]] 2016 edition since its
+has less heavy resource requirements.
+
+For install:
+
+#+begin_src sh
+bash install.sh --install
+#+end_src
+
+This will install the wps-for-linux_2016 in your home directory's
+=.local= folder (i.e. the standard XDG_DATA_HOME parent place) so that
+it doesn't pollute your system package syste.
+
+Use ~the --uninstall~ option to uninstall as so.
+
+There's no requirements needed to run the executable installed by this
+repo since the old wps-for-linus 2016 edition use the obsolete QT4
+library and maintained internally with =LD_LIBRARY_PATH= pre-defined
+in its caller. So, it's out of box.
